@@ -1,0 +1,131 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 1560
+  ClientWidth = 720
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object MapView1: TMapView
+    Align = Client
+    Size.Width = 720.000000000000000000
+    Size.Height = 1560.000000000000000000
+    Size.PlatformDefault = False
+    object SpeedButton3: TSpeedButton
+      ControlType = Platform
+      Position.Y = 80.000000000000000000
+      Size.Width = 153.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'SpeedButton3Style1'
+      Text = 'SUA LOCALIZA'#199#195'O'
+    end
+    object SpeedButton5: TSpeedButton
+      ControlType = Platform
+      Position.X = 240.000000000000000000
+      Position.Y = 80.000000000000000000
+      Size.Width = 177.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'ESTA'#199#195'O MAIS PR'#211'XIMA'
+    end
+    object Panel1: TPanel
+      ControlType = Platform
+      Position.Y = 8.000000000000000000
+      Size.Width = 433.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Rectangle1: TRectangle
+        Align = Client
+        Fill.Color = xFF088DC2
+        Size.Width = 433.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object Edit1: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          StyleLookup = 'Edit1Style1'
+          TabOrder = 0
+          ControlType = Platform
+          Position.X = 48.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 361.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Buscar'
+        end
+      end
+      object SpeedButton1: TSpeedButton
+        ControlType = Platform
+        IconTintColor = claWhite
+        Position.Y = 1.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'drawertoolbutton'
+        Text = 'SpeedButton1'
+      end
+      object SpeedButton2: TSpeedButton
+        ControlType = Platform
+        IconTintColor = claWhite
+        Position.X = 384.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'searchtoolbutton'
+        Text = 'SpeedButton1'
+      end
+    end
+    object Panel2: TPanel
+      ControlType = Platform
+      Position.Y = 280.000000000000000000
+      Size.Width = 689.000000000000000000
+      Size.Height = 120.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'panelstyle'
+      TabOrder = 1
+      object RoundRect1: TRoundRect
+        Align = Client
+        Fill.Color = xFF088DC2
+        Size.Width = 689.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        object btn_pedir: TButton
+          ControlType = Platform
+          Position.X = -16.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 721.000000000000000000
+          Size.Height = 97.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'QUERO UM GUARDA-CHUVA'
+          TintColor = x00FFFFFF
+          OnClick = btn_pedirClick
+        end
+      end
+    end
+  end
+  object LocationSensor1: TLocationSensor
+    ActivityType = Other
+    UsageAuthorization = WhenInUse
+    OnLocationChanged = LocationSensor1LocationChanged
+    Left = 136
+    Top = 232
+  end
+  object ActionList1: TActionList
+    Left = 336
+    Top = 152
+    object ActPhotoCamera: TTakePhotoFromCameraAction
+      Category = 'Media Library'
+    end
+    object ActPhotoLibrary: TTakePhotoFromLibraryAction
+      Category = 'Media Library'
+    end
+  end
+end

@@ -1,0 +1,21 @@
+inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited MapView1: TMapView
+    Size.Width = 450.000000000000000000
+    Size.Height = 695.000000000000000000
+    inherited Panel1: TPanel
+      Position.X = 8.000000000000000000
+    end
+    inherited Panel2: TPanel
+      Opacity = 0.000000000000000000
+      Position.X = 8.000000000000000000
+      inherited RoundRect1: TRoundRect
+        inherited btn_pedir: TButton
+          Enabled = False
+        end
+      end
+    end
+  end
+end
