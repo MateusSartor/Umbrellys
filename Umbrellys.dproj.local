@@ -2,13 +2,17 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/08/31 21:00:40.000.680,=C:\Users\larin\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/08/31 22:30:37.000.897,C:\Users\larin\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\larin\Documents\Mateus\PI\Umbrellys\U_principal.pas</Transaction>
-    <Transaction>2022/08/31 22:30:37.000.897,C:\Users\larin\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\larin\Documents\Mateus\PI\Umbrellys\U_principal.fmx</Transaction>
-    <Transaction>2022/08/31 22:30:45.000.804,C:\Users\larin\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\larin\Documents\Mateus\PI\Umbrellys\Project1.dproj</Transaction>
-    <Transaction>2022/08/31 22:30:55.000.392,C:\Users\larin\Documents\Mateus\PI\Umbrellys\Project1.dproj=C:\Users\larin\Documents\Mateus\PI\Umbrellys\Umbrellys.dproj</Transaction>
+    <Transaction>2022/08/31 22:30:37.000.897,C:\Users\larin\Documents\Mateus\PI\Umbrellys\U_principal.pas=C:\Users\larin\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/08/31 22:30:37.000.897,C:\Users\larin\Documents\Mateus\PI\Umbrellys\U_principal.fmx=C:\Users\larin\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2022/08/31 22:30:45.000.804,C:\Users\larin\Documents\Mateus\PI\Umbrellys\Project1.dproj=C:\Users\larin\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/08/31 22:30:55.000.392,C:\Users\larin\Documents\Mateus\PI\Umbrellys\Umbrellys.dproj=C:\Users\larin\Documents\Mateus\PI\Umbrellys\Project1.dproj</Transaction>
+    <Transaction>2022/09/10 14:29:58.778,=C:\Users\larin\Documents\Mateus\PI\Umbrellys\u99Permissions.pas</Transaction>
+    <Transaction>2022/09/10 14:53:53.754,=C:\Users\larin\Documents\Mateus\PI\Umbrellys\Unit2.pas</Transaction>
+    <Transaction>2022/09/10 14:54:15.060,C:\Users\larin\Documents\Mateus\PI\Umbrellys\U_camera.fmx=C:\Users\larin\Documents\Mateus\PI\Umbrellys\Unit2.fmx</Transaction>
+    <Transaction>2022/09/10 14:54:15.060,C:\Users\larin\Documents\Mateus\PI\Umbrellys\U_camera.pas=C:\Users\larin\Documents\Mateus\PI\Umbrellys\Unit2.pas</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile iOSSimulator="iPhone5" Android=""/>
+		<NoProfile iOSSimulator="iPhone5" Android="RQ8MA0RCF3W"/>
 	</ActiveMobileDevice>
 	<BT_BuildType>Debug</BT_BuildType>
 </BorlandProject>

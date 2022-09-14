@@ -1,0 +1,38 @@
+object frm_camera: Tfrm_camera
+  Left = 0
+  Top = 0
+  Caption = 'frm_camera'
+  ClientHeight = 850
+  ClientWidth = 405
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object img_camera: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = Contents
+    Size.Width = 405.000000000000000000
+    Size.Height = 850.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object lb_error: TLabel
+    ControlType = Platform
+    Position.X = 40.000000000000000000
+    Position.Y = 768.000000000000000000
+    Size.Width = 329.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+  end
+  object CameraComponent: TCameraComponent
+    OnSampleBufferReady = CameraComponentSampleBufferReady
+    Left = 176
+    Top = 136
+  end
+end

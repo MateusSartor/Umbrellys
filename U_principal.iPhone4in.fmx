@@ -12,29 +12,23 @@ inherited Form1_iPhone4in: TForm1_iPhone4in
       Size.Height = 44.000000000000000000
     end
     inherited Panel1: TPanel
-      Position.X = 8.000000000000000000
-      inherited Rectangle1: TRectangle
-        inherited Edit1: TEdit
-          Size.Height = 30.000000000000000000
-        end
-      end
-      inherited SpeedButton1: TSpeedButton
+      inherited btn_busca: TSpeedButton
         Size.Width = 44.000000000000000000
         Size.Height = 44.000000000000000000
       end
-      inherited SpeedButton2: TSpeedButton
-        Size.Width = 44.000000000000000000
-        Size.Height = 44.000000000000000000
+      inherited txt_busca: TEdit
+        Size.Height = 30.000000000000000000
       end
     end
-    inherited Panel2: TPanel
-      Opacity = 0.000000000000000000
+    inherited btn_guard: TSpeedButton [3]
+      Size.Height = 44.000000000000000000
+    end
+    inherited btn_opc: TSpeedButton [4]
       Position.X = 8.000000000000000000
-      inherited RoundRect1: TRoundRect
-        inherited btn_pedir: TButton
-          Enabled = False
-        end
-      end
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+    end
+    inherited Panel2: TPanel [5]
     end
   end
 end

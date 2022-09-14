@@ -7,30 +7,32 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Maps,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.Edit, FMX.Objects, FMX.Ani,
   System.Sensors, System.Sensors.Components,FMX.Layouts, FMX.WebBrowser,
-  System.Permissions,FMX.MediaLibrary.Actions, System.Actions, FMX.ActnList, FMX.StdActns;
+  System.Permissions,FMX.MediaLibrary.Actions, System.Actions, FMX.ActnList, FMX.StdActns,
+  FMX.Media, u99Permissions;
 
 type
   TForm1 = class(TForm)
     MapView1: TMapView;
-    SpeedButton1: TSpeedButton;
     Rectangle1: TRectangle;
-    SpeedButton2: TSpeedButton;
-    Edit1: TEdit;
+    btn_busca: TSpeedButton;
+    txt_busca: TEdit;
     SpeedButton3: TSpeedButton;
     SpeedButton5: TSpeedButton;
-    RoundRect1: TRoundRect;
     Panel1: TPanel;
-    Panel2: TPanel;
-    btn_pedir: TButton;
     LocationSensor1: TLocationSensor;
-    ActionList1: TActionList;
-    ActPhotoCamera: TTakePhotoFromCameraAction;
-    ActPhotoLibrary: TTakePhotoFromLibraryAction;
+    btn_guard: TSpeedButton;
+    btn_opc: TSpeedButton;
+    Panel2: TPanel;
+    Rectangle2: TRectangle;
+    RoundRect1: TRoundRect;
+    lb_result: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure LocationSensor1LocationChanged(Sender: TObject; const OldLocation,
       NewLocation: TLocationCoord2D);
     procedure FormActivate(Sender: TObject);
-    procedure btn_pedirClick(Sender: TObject);
+    procedure btn_guardClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure btn_buscaClick(Sender: TObject);
   private
     { Private declarations }
       {$IFDEF ANDROID}
@@ -39,6 +41,7 @@ type
 
   public
     { Public declarations }
+      permissao : T99permissions;
   end;
 
 var
@@ -50,14 +53,9 @@ implementation
   ,Androidapi.Helpers, Androidapi.JNI.JavaTypes, Androidapi.JNI.Os
   {$ENDIF}
 
-  ;
+  , U_camera;
 
-  procedure TakePicturePermissionRequestResult(
-          Sender: TObject; const Apermission: TArray<string>;
-          const AGrantResults: TArray<TPermissionStatus>);
-  begin
 
-  end;
 
 {$R *.fmx}
 {$R *.NmXhdpiPh.fmx ANDROID}
@@ -69,22 +67,11 @@ implementation
 {$R *.iPad.fmx IOS}
 
 
-procedure TForm1.btn_pedirClick(Sender: TObject);
-begin
-    begin
-        {$IFDEF ANDROID}
-        PermissionsService.RequestPermissions([PermissaoCamera,
-                                               PermissaoReadStorage,
-                                               PermissaoWriteStorage],
-                                               TakePicturePermissionRequestResult,
-                                               DisplayMessageCamera
-                                               );
-        {$ENDIF}
 
-        {$IFDEF IOS}
-        ActPhotoCamera.Execute;
-        {$ENDIF}
-end;
+
+procedure TForm1.btn_buscaClick(Sender: TObject);
+begin
+      txt_busca.Visible := true;
 end;
 
 procedure TForm1.FormActivate(Sender: TObject);
@@ -100,8 +87,8 @@ procedure TForm1.FormCreate(Sender: TObject);
       posicao: TMapCoordinate;
       FpermissGPS:string;
      {$ENDIF}
-begin
-
+  begin
+        //MapaView
 
         MapView1.MapType := TMapType.normal;
 
@@ -112,6 +99,34 @@ begin
 
         //Zoom
         Mapview1.Zoom := 11;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Camera
+          permissao := T99permissions.Create;
+
+
+
+
+
+
+          txt_busca.Visible := false;
+  end;
+
+procedure TForm1.FormDestroy(Sender: TObject);
+begin
+        permissao.DisposeOf;
 end;
 
 procedure TForm1.LocationSensor1LocationChanged(Sender: TObject;
@@ -121,5 +136,20 @@ begin
 
 
 end;
+
+procedure TForm1.btn_guardClick(Sender: TObject);
+begin
+      if not permissao.VerifyCameraAccess then
+        permissao.Camera(nil, nil)
+      else
+        begin
+          //Abrir camera
+            Frm_Camera.showmodal(procedure(ModalResult: TModalResult)
+            begin
+                 lb_result.Text := Frm_Camera.codigo;
+            end);
+        end;
+end;
+
 
 end.
